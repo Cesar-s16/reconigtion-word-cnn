@@ -19,7 +19,7 @@ height = 500
 black_area_width = 500
 
 # Dimensiones del área azul celeste
-stripe_height = 140
+stripe_height = 130
 
 # Cargar imágenes del lápiz y el borrador
 lapiz_img = pygame.image.load("images/lapiz.png")
@@ -39,12 +39,12 @@ font = pygame.font.Font(UBUNTU, 50)
 
 # Dibujar el título sobre la pantalla
 rect = pygame.draw.rect(screen, black, [width+2, 0, 400, height], 0)
-title = font.render("Tu palabra es:", True, white)
-screen.blit(title, (width+50, height/4))
+title = font.render("Ingresa Palabra:", True, white)
+screen.blit(title, (width+10, height/4))
 
 # Dibujar la línea celeste antes de cualquier otra cosa en la pantalla
 pygame.draw.line(screen, light_blue, (0, height - stripe_height - 70), (width, height - stripe_height - 70), 3)
-pygame.draw.line(screen, light_blue, (0, height - stripe_height - 130), (width, height - stripe_height - 130), 3)
+pygame.draw.line(screen, light_blue, (0, height - stripe_height - 128), (width, height - stripe_height - 128), 3)
 
 # Función para actualizar la imagen del marcador
 def update_marker_img():
@@ -65,7 +65,7 @@ def show_word_pred(predicted_text):
 
 def crop(original): 
     # Dimensiones de las franjas azules a excluir
-    exclude_height = 130
+    exclude_height = 120
 
     # Coordenadas del área a recortar, excluyendo una porción más grande de las franjas azules
     crop_area = (0, exclude_height, width, height - 2 * exclude_height)
@@ -107,7 +107,7 @@ try:
                     screen.fill(white)
                     pygame.draw.rect(screen, black, [width, 0, black_area_width, height], 0)
                     pygame.draw.line(screen, light_blue, (0, height - stripe_height - 70), (width, height - stripe_height - 70), 3)
-                    pygame.draw.line(screen, light_blue, (0, height - stripe_height - 130), (width, height - stripe_height - 130), 3)
+                    pygame.draw.line(screen, light_blue, (0, height - stripe_height - 128), (width, height - stripe_height - 128), 3)
                     title = font.render("Ingresa Palabra:", True, white)
                     screen.blit(title, (width+10, height/4))
 
@@ -119,7 +119,7 @@ try:
                 radius = 12 
                 color = white 
             else:
-                radius = 7 
+                radius = 6.5 
                 color = black 
 
             # Verificar si el evento del mouse está en el área de escritura
