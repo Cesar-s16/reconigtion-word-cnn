@@ -5,6 +5,7 @@ from  image_processor import get_predict_word
 black = [0, 0, 0]
 white = [255, 255, 255]
 light_blue = (173, 216, 230)
+yellow_strong = (255, 255, 0)
 draw_on = False
 last_pos = (0, 0)
 color = black  # Color inicial del bolígrafo
@@ -40,6 +41,10 @@ font = pygame.font.Font(UBUNTU, 50)
 rect = pygame.draw.rect(screen, black, [width+2, 0, 400, height], 0)
 title = font.render("Tu palabra es:", True, white)
 screen.blit(title, (width+50, height/4))
+
+# Dibujar la línea celeste antes de cualquier otra cosa en la pantalla
+pygame.draw.line(screen, light_blue, (0, height - stripe_height - 70), (width, height - stripe_height - 70), 3)
+pygame.draw.line(screen, light_blue, (0, height - stripe_height - 130), (width, height - stripe_height - 130), 3)
 
 # Función para actualizar la imagen del marcador
 def update_marker_img():
@@ -101,6 +106,8 @@ try:
                     font = pygame.font.Font(UBUNTU, 50)
                     screen.fill(white)
                     pygame.draw.rect(screen, black, [width, 0, black_area_width, height], 0)
+                    pygame.draw.line(screen, light_blue, (0, height - stripe_height - 70), (width, height - stripe_height - 70), 3)
+                    pygame.draw.line(screen, light_blue, (0, height - stripe_height - 130), (width, height - stripe_height - 130), 3)
                     title = font.render("Ingresa Palabra:", True, white)
                     screen.blit(title, (width+10, height/4))
 
@@ -127,7 +134,7 @@ try:
                     pygame.draw.circle(screen, color, event.pos, radius)
                     roundline(screen, color, event.pos, last_pos, radius)
                 last_pos = event.pos
-
+        
         # Dibujar franjas azules celestes encima y debajo del área central de dibujo
         pygame.draw.rect(screen, light_blue, [0, 0, width, stripe_height])  # Franja superior
         pygame.draw.rect(screen, light_blue, [0, height - stripe_height, width, stripe_height])  # Franja inferior
@@ -140,7 +147,7 @@ try:
 
         # Mostrar el texto "Proyecto 1 IA" en la franja inferior
         font = pygame.font.Font(UBUNTU, 100)
-        text = font.render("Proyecto 1 IA", True, black)
+        text = font.render("Proyecto 2 IA", True, black)
         text_rect = text.get_rect(center=(width // 2, height - stripe_height // 2))
         screen.blit(text, text_rect)
 
