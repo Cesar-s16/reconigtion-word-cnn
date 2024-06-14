@@ -1,8 +1,8 @@
 # reconigtion-word
-Red neuronal multicapas que lee palabras realizadas a mano 
+Red neuronal convolucional que lee palabras realizadas a mano. 
 
 > [!NOTE]
-> Unicamente lee letras separadas y escritas en la misma linea
+> Unicamente lee letras separadas y escritas en la misma linea. no acepta letra cursiva.
 
 # Descargas de librerias a utilizar de python:
 
@@ -29,5 +29,6 @@ https://www.mediafire.com/file/zgsm43aesxlbbp3/emnist-letters-train.csv/file
 
 # Imagen de prueba del sistema
 
-![image](https://github.com/Cesar-s16/reconigtion-word/assets/74503185/920d9d08-91da-4f21-a2e1-6e5c6cb85c06)
+![image](https://github.com/Cesar-s16/reconigtion-word-cnn/assets/74503185/c59b0ae0-f968-4716-b3bd-aae5ba4ab448)
+
 
